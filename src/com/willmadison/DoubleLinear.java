@@ -4,29 +4,28 @@
  */
 package com.willmadison;
 
-import java.util.*;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 class DoubleLinear {
-
     public static int dblLinear(int n) {
-        List<Integer> u = new ArrayList<>(Arrays.asList(1));
-        int desiredValue = 0, currentIndex = 0;
+        SortedSet<Integer> u = new TreeSet<>();
+        u.add(1);
 
-        while (u.size() < 4 * n) {
-            int currentValue = u.get(currentIndex);
-            int nextValue = 2 * currentValue + 1, nextNextValue = 3 * currentValue + 1;
-
-            u.addAll(Arrays.asList(nextValue, nextNextValue));
-
-            ++currentIndex;
+        for (int i = 0; i < n; i++) {
+            int x = u.first();
+            u.add(x * 2 + 1);
+            u.add(x * 3 + 1);
+            u.remove(x);
         }
 
-        u = new ArrayList<>(new HashSet<>(u));
+        return u.first();
+    }
 
-        Collections.sort(u);
-
-        desiredValue = u.get(n);
-
-        return desiredValue;
+    public static void main(String args[]) {
+        System.out.println(DoubleLinear.dblLinear(10) == 22);
+        System.out.println(DoubleLinear.dblLinear(20) == 57);
+        System.out.println(DoubleLinear.dblLinear(30) == 91);
+        System.out.println(DoubleLinear.dblLinear(50) == 175);
     }
 }

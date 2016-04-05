@@ -2,6 +2,7 @@ bin
 build
 classes
 pkg
+certificates
 out
 
 .classpath
@@ -18,6 +19,7 @@ atlassian-ide-plugin.xml
 *.iml
 *.log
 *.out
-*.ipr
-*.iws
 
+gradle.properties
+
+*.log
