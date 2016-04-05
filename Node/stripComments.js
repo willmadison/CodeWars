@@ -26,5 +26,4 @@ var solution = function (input, markers) {
     return modifiedLines.join('\n');
 };
 
-
 console.log(solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"]));
