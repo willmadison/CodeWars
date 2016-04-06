@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SecretDetective {
 
-    Map<Character, SecretNode> nodesByCharacter = new HashMap<>();
+    private Map<Character, SecretNode> nodesByCharacter = new HashMap<>();
 
     public String recoverSecret(char[][] triplets) {
         for (char[] triplet : triplets) {
