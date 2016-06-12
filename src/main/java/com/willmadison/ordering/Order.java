@@ -4,7 +4,10 @@
  */
 package com.willmadison.ordering;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class Order {

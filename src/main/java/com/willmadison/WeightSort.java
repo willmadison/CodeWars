@@ -1,6 +1,9 @@
 package com.willmadison;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringJoiner;
 import java.util.regex.Pattern;
 
 public class WeightSort {
