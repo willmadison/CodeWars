@@ -101,3 +101,87 @@ func TestRemoveNb(t *testing.T) {
 		})
 	}
 }
+
+func TestHasUniqueChar(t *testing.T) {
+	tests := []struct {
+		given string
+		want  bool
+	}{
+		{
+			"  nAa",
+			false,
+		},
+		{
+			"abcde",
+			true,
+		},
+		{
+			"++-",
+			false,
+		},
+		{
+			"AaBbC",
+			true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("HasUniqueChar(%v)", tt.given), func(t *testing.T) {
+			if got := HasUniqueChar(tt.given); !assert.Equal(t, tt.want, got) {
+				t.Errorf("HasUniqueChar(%v)= %v, want %v", tt.given, got, tt.want)
+			}
+		})
+	}
+}
+
+func TestBandNameGenerator(t *testing.T) {
+	tests := []struct {
+		given string
+		want  string
+	}{
+		{
+			"knife",
+			"The Knife",
+		},
+		{
+			"tart",
+			"Tartart",
+		},
+		{
+			"sandles",
+			"Sandlesandles",
+		},
+		{
+			"bed",
+			"The Bed",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("bandNameGenerator(%v)", tt.given), func(t *testing.T) {
+			if got := bandNameGenerator(tt.given); !assert.Equal(t, tt.want, got) {
+				t.Errorf("bandNameGenerator(%v)= %v, want %v", tt.given, got, tt.want)
+			}
+		})
+	}
+}
+
+func TestDecodeMorse(t *testing.T) {
+	tests := []struct {
+		given string
+		want  string
+	}{
+		{
+			".... . -.--   .--- ..- -.. .",
+			"HEY JUDE",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("DecodeMorse(%v)", tt.given), func(t *testing.T) {
+			if got := DecodeMorse(tt.given); !assert.Equal(t, tt.want, got) {
+				t.Errorf("DecodeMorse(%v)= %v, want %v", tt.given, got, tt.want)
+			}
+		})
+	}
+}
