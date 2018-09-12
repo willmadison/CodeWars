@@ -1,7 +1,7 @@
 Code Wars
 ---------
 
-This is simply a little repository for storing my solutions for CodeWars katas!
+This is a little repository for storing my solutions for CodeWars katas!
 
 Cheers!
 
