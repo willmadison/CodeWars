@@ -88,3 +88,20 @@ func DecodeMorse(morseCode string) string {
 
 	return strings.TrimSpace(b.String())
 }
+
+var nucleotideComplements = map[rune]rune{
+	'A': 'T',
+	'T': 'A',
+	'C': 'G',
+	'G': 'C',
+}
+
+func DNAStrand(sequence string) string {
+	var b bytes.Buffer
+
+	for _, n := range sequence {
+		b.WriteRune(nucleotideComplements[n])
+	}
+
+	return b.String()
+}
